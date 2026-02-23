@@ -233,7 +233,7 @@ const scrollToSection = (id) => {
 
       <div class="projects-grid">
         <div class="card project-card">
-          <img src="https://via.placeholder.com/400x200?text=RamsResNow" alt="RamsResNow">
+          <img src="./assets/RamsResNow.png" alt="RamsResNow">
           <div class="project-header">
             <h3>RamsResNow</h3>
             <span class="badge">Web App</span>
@@ -245,7 +245,7 @@ const scrollToSection = (id) => {
         </div>
 
         <div class="card project-card">
-          <img src="https://via.placeholder.com/400x200?text=Sari-Sari+Trade" alt="Sari-Sari Trade">
+          <img src="./assets/Sarisari.png" alt="Sari-Sari Trade">
           <div class="project-header">
             <h3>The Sari-Sari Trade</h3>
             <span class="badge">Web App</span>
