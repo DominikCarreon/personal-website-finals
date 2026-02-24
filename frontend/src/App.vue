@@ -172,7 +172,7 @@ const scrollToSection = (id) => {
 
       <div class="skills-grid">
         <div class="card skill-card">
-          <div class="icon-box tactical-glow"><span></></span></div>
+          <div class="icon-box tactical-glow"><span>&lt;/&gt;</span></div>
           <h3>FRONTEND</h3>
           <p class="tech-stack">HTML, CSS, JavaScript, Vue.js</p>
           <div class="progress-wrapper">
