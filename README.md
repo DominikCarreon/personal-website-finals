@@ -16,8 +16,6 @@ Core Features & Functionalities
 • Server Status Indicator: A real-time blinking ping indicator verifying database connectivity.
 • Theme Management: Includes a toggle switch to change between dark mode and light mode.
 
-Visual Documentation (Screenshots)
-
 A. Home and Profile Overview
 The landing page features your profile picture. It displays a dynamic typing effect and tactical design elements.
 
