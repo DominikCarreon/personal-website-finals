@@ -2,10 +2,10 @@
 import { ref, onMounted, computed } from 'vue'
 import { createClient } from '@supabase/supabase-js'
 
-import ramsImg from './assets/RamsResNow.png'
-import sariImg from './assets/Sarisari.png'
-import pwdImg from './assets/PWD ID System.png'
-import arduinoImg from './assets/Fire & Smoke Detector.png'
+import ramsImg from './assets/rams.png'
+import sariImg from './assets/sari.png'
+import pwdImg from './assets/pwd.png'
+import arduinoImg from './assets/fire.png'
 
 const supabaseUrl = 'https://lhshisjdrmyolwgzbqhk.supabase.co'
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxoc2hpc2pkcm15b2x3Z3picWhrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE4NDk5MTcsImV4cCI6MjA4NzQyNTkxN30._Ke65Ac72WBEH_CPriA0reFOGR_KB6dBXxJJkiE644Q'
