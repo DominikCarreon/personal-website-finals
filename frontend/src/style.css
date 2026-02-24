@@ -545,3 +545,36 @@ footer {
     font-size: 13px;
   }
 }
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #0b0b0b; /* Kept the dark background from your App.vue preferences */
+  color: #ffffff; /* Changed text color to white for visibility */
+  line-height: 1.6;
+  padding-top: 70px;
+  font-weight: bold;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

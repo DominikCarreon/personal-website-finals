@@ -262,7 +262,7 @@ const scrollToSection = (id) => {
       <div class="section-header">
         <h2>Guest<span>book</span></h2>
         <div class="line"></div>
-        <p class="section-description">Leave a mark! (Powered by Supabase)</p>
+        <p class="section-description">Leave a Comment For my Website!</p>
       </div>
 
       <div class="guestbook-container">
