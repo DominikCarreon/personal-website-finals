@@ -2,6 +2,11 @@
 import { ref, onMounted, computed } from 'vue'
 import { createClient } from '@supabase/supabase-js'
 
+import ramsImg from './assets/RamsResNow.png'
+import sariImg from './assets/Sarisari.png'
+import pwdImg from './assets/pwd-id.png'
+import arduinoImg from './assets/arduino.png'
+
 const supabaseUrl = 'https://lhshisjdrmyolwgzbqhk.supabase.co'
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxoc2hpc2pkcm15b2x3Z3picWhrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE4NDk5MTcsImV4cCI6MjA4NzQyNTkxN30._Ke65Ac72WBEH_CPriA0reFOGR_KB6dBXxJJkiE644Q'
 const supabase = createClient(supabaseUrl, supabaseKey)
@@ -21,7 +26,7 @@ const projects = [
     id: 1,
     title: 'RamsResNow',
     type: 'SOFTWARE',
-    img: './assets/RamsResNow.png',
+    img: ramsImg,
     desc: 'A simplified reservation system designed for everyone\'s use.',
     tags: ['Figma', 'MySQL', 'Reservation', 'APC Admins']
   },
@@ -29,7 +34,7 @@ const projects = [
     id: 2,
     title: 'The Sari-Sari Trade',
     type: 'SOFTWARE',
-    img: './assets/Sarisari.png',
+    img: sariImg,
     desc: 'The Sari-Sari Trade System allows residents to trade food items.',
     tags: ['Figma', 'Canva', 'Brgy\'s', 'Firebase']
   },
@@ -37,7 +42,7 @@ const projects = [
     id: 3,
     title: 'PWD ID System',
     type: 'SOFTWARE',
-    img: './assets/pwd-id.png',
+    img: pwdImg,
     desc: 'A digital PWD ID system with QR code verification to prevent the use of fake IDs in the Philippines.',
     tags: ['Web', 'QR Code', 'Database']
   },
@@ -45,7 +50,7 @@ const projects = [
     id: 4,
     title: 'Fire & Smoke Detector',
     type: 'HARDWARE',
-    img: './assets/arduino.png',
+    img: arduinoImg,
     desc: 'A fire and smoke detector with SMS alerts using Arduino.',
     tags: ['Arduino', 'C++', 'Electronics', 'SMS']
   }
