@@ -176,7 +176,7 @@ const scrollToSection = (id) => {
         <a href="#contact" @click.prevent="scrollToSection('contact')" class="btn">RECRUIT ME</a>
       </div>
       <div class="img-container">
-        <img src="./assets/1742300971993.jpg" alt="Dominik Carreon" class="profile-pic">
+        <img src="./assets/1742300971993.jpeg" alt="Dominik Carreon" class="profile-pic">
       </div>
     </section>
 
