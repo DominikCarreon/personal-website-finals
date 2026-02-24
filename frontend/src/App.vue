@@ -173,10 +173,10 @@ const scrollToSection = (id) => {
     </section>
 
     <section id="skills" class="skills-section fade-up">
-      <div class="skills-header">
+      <div class="section-header">
         <h2>My <span>Skills</span></h2>
         <div class="line"></div>
-        <p class="skills-description">
+        <p class="section-description">
           I have growing experience in UI/UX design, prototyping, and web projects, using tools like Figma and Canva to create simple, user-friendly designs and layouts.
         </p>
       </div>
@@ -225,10 +225,10 @@ const scrollToSection = (id) => {
     </section>
 
     <section id="projects" class="projects-section fade-up">
-      <div class="projects-header">
+      <div class="section-header">
         <h2>My <span>Projects</span></h2>
         <div class="line"></div>
-        <p class="projects-description">Explore my recent work across various domains and technologies.</p>
+        <p class="section-description">Explore my recent work across various domains and technologies.</p>
       </div>
 
       <div class="projects-grid">
@@ -262,7 +262,7 @@ const scrollToSection = (id) => {
       <div class="section-header">
         <h2>Guest<span>book</span></h2>
         <div class="line"></div>
-        <p style="color:#ccc; text-align:center;">Leave a mark! (Powered by Supabase)</p>
+        <p class="section-description">Leave a mark! (Powered by Supabase)</p>
       </div>
 
       <div class="guestbook-container">
@@ -289,10 +289,10 @@ const scrollToSection = (id) => {
     </section>
 
     <section id="contact" class="contact-section fade-up">
-      <div class="contact-header">
+      <div class="section-header">
         <h2>Get In <span>Touch</span></h2>
         <div class="line"></div>
-        <p class="contact-desc">Have a project in mind or want to collaborate? Feel free to reach out!</p>
+        <p class="section-description">Have a project in mind or want to collaborate? Feel free to reach out!</p>
       </div>
 
       <div class="contact-info-row">
@@ -527,6 +527,13 @@ section {
   background-color: #ff4d4d;
   margin: 0 auto;
   border-radius: 2px;
+}
+
+.section-description {
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 20px;
 }
 
 /* ===== ABOUT ===== */
