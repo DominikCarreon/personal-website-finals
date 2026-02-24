@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = 'https://lhshisjdrmyolwgzbqhk.supabase.co'
@@ -12,6 +12,58 @@ const newMessage = ref('')
 const typingElement = ref(null)
 const isLoading = ref(false)
 const isDarkMode = ref(false)
+
+const activeFilter = ref('ALL')
+const viewCount = ref(0)
+
+const projects = [
+  {
+    id: 1,
+    title: 'RamsResNow',
+    type: 'SOFTWARE',
+    img: './assets/RamsResNow.png',
+    desc: 'A simplified reservation system designed for everyone\'s use.',
+    tags: ['Figma', 'MySQL', 'Reservation', 'APC Admins']
+  },
+  {
+    id: 2,
+    title: 'The Sari-Sari Trade',
+    type: 'SOFTWARE',
+    img: './assets/Sarisari.png',
+    desc: 'The Sari-Sari Trade System allows residents to trade food items.',
+    tags: ['Figma', 'Canva', 'Brgy\'s', 'Firebase']
+  },
+  {
+    id: 3,
+    title: 'PWD ID System',
+    type: 'SOFTWARE',
+    img: './assets/pwd-id.png',
+    desc: 'A digital PWD ID system with QR code verification to prevent the use of fake IDs in the Philippines.',
+    tags: ['Web', 'QR Code', 'Database']
+  },
+  {
+    id: 4,
+    title: 'Fire & Smoke Detector',
+    type: 'HARDWARE',
+    img: './assets/arduino.png',
+    desc: 'A fire and smoke detector with SMS alerts using Arduino.',
+    tags: ['Arduino', 'C++', 'Electronics', 'SMS']
+  }
+]
+
+const filteredProjects = computed(() => {
+  if (activeFilter.value === 'ALL') return projects
+  return projects.filter(p => p.type === activeFilter.value)
+})
+
+const updateRadar = async () => {
+  const { data, error } = await supabase.from('radar_tracking').select('views').eq('id', 1).single()
+  if (data) {
+    const newViews = data.views + 1
+    viewCount.value = newViews
+    await supabase.from('radar_tracking').update({ views: newViews }).eq('id', 1)
+  }
+}
 
 const toggleTheme = () => {
   isDarkMode.value = !isDarkMode.value
@@ -53,6 +105,7 @@ const submitComment = async () => {
 
 onMounted(() => {
   fetchComments()
+  updateRadar()
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -113,7 +166,7 @@ const scrollToSection = (id) => {
 
     <section id="home" class="hero fade-up">
       <div class="hero-text">
-        <h1>OPERATIVE <br><span>DOMINIK CARREON</span></h1>
+        <h1>OPERATIVE <br><span>Dominik Carreon</span></h1>
         <p ref="typingElement" class="typing-cursor"></p>
         <a href="#contact" @click.prevent="scrollToSection('contact')" class="btn">RECRUIT ME</a>
       </div>
@@ -233,28 +286,22 @@ const scrollToSection = (id) => {
         <p class="section-description">Declassified records of recent operations.</p>
       </div>
 
-      <div class="projects-grid">
-        <div class="card project-card">
-          <img src="./assets/RamsResNow.png" alt="RamsResNow">
-          <div class="project-header">
-            <h3>RamsResNow</h3>
-            <span class="badge">DECLASS</span>
-          </div>
-          <p class="project-desc">A simplified reservation system designed for everyone's use.</p>
-          <div class="tags">
-            <span>Figma</span><span>MySQL</span><span>Reservation</span><span>APC Admins</span>
-          </div>
-        </div>
+      <div class="filter-controls">
+        <button @click="activeFilter = 'ALL'" :class="{ active: activeFilter === 'ALL' }" class="filter-btn">ALL</button>
+        <button @click="activeFilter = 'SOFTWARE'" :class="{ active: activeFilter === 'SOFTWARE' }" class="filter-btn">SOFTWARE</button>
+        <button @click="activeFilter = 'HARDWARE'" :class="{ active: activeFilter === 'HARDWARE' }" class="filter-btn">HARDWARE</button>
+      </div>
 
-        <div class="card project-card">
-          <img src="./assets/Sarisari.png" alt="Sari-Sari Trade">
+      <div class="projects-grid">
+        <div v-for="project in filteredProjects" :key="project.id" class="card project-card">
+          <img :src="project.img" :alt="project.title">
           <div class="project-header">
-            <h3>The Sari-Sari Trade</h3>
+            <h3>{{ project.title }}</h3>
             <span class="badge">DECLASS</span>
           </div>
-          <p class="project-desc">The Sari-Sari Trade System allows residents to trade food items.</p>
+          <p class="project-desc">{{ project.desc }}</p>
           <div class="tags">
-            <span>Figma</span><span>Canva</span><span>Brgy's</span><span>Firebase</span>
+            <span v-for="tag in project.tags" :key="tag">{{ tag }}</span>
           </div>
         </div>
       </div>
@@ -333,6 +380,9 @@ const scrollToSection = (id) => {
     </section>
 
     <footer>
+      <div class="radar-stats">
+        <span>ACTIVE RADAR: {{ viewCount }} INTERCEPTIONS</span>
+      </div>
       © 2026 DOMINIK CARREON. END OF TRANSMISSION.
     </footer>
   </div>
