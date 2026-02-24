@@ -723,6 +723,12 @@ font-family: 'Black Ops One', cursive;
 margin-bottom: 10px;
 }
 
+.modal-content p {
+color: var(--text-main);
+font-family: 'Poppins', sans-serif;
+font-weight: bold;
+}
+
 @media (max-width: 768px) {
 .hamburger {
 display: block;
