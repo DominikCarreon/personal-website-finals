@@ -42,3 +42,7 @@ Implementation Highlights
 • Admin Authentication: Added a secure login route to manage database records directly from the frontend.
 • Dynamic Rendering: Uses Vue JS reactive variables to ensure the user interface updates instantaneously.
 • Custom Event Listeners: Programmed advanced JavaScript tracking to trigger hidden interactive elements.
+
+Personal Profile website hosted on Vercel.com (Link)
+https://personal-website-finals-gamma.vercel.app/
+
