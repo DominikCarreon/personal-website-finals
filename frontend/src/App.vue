@@ -11,6 +11,16 @@ const newName = ref('')
 const newMessage = ref('')
 const typingElement = ref(null)
 const isLoading = ref(false)
+const isDarkMode = ref(false)
+
+const toggleTheme = () => {
+  isDarkMode.value = !isDarkMode.value
+  if (isDarkMode.value) {
+    document.documentElement.setAttribute('data-theme', 'dark')
+  } else {
+    document.documentElement.removeAttribute('data-theme')
+  }
+}
 
 const fetchComments = async () => {
   const { data, error } = await supabase
@@ -94,6 +104,9 @@ const scrollToSection = (id) => {
           <a href="#" @click.prevent="scrollToSection('projects')">MISSIONS</a>
           <a href="#" @click.prevent="scrollToSection('guestbook')">COMMLINK</a>
           <a href="#" @click.prevent="scrollToSection('contact')">EXTRACTION</a>
+          <button @click="toggleTheme" class="theme-btn">
+            {{ isDarkMode ? 'LIGHT MODE' : 'DARK MODE' }}
+          </button>
         </nav>
       </div>
     </header>
