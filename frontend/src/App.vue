@@ -4,8 +4,8 @@ import { createClient } from '@supabase/supabase-js'
 
 import ramsImg from './assets/RamsResNow.png'
 import sariImg from './assets/Sarisari.png'
-import pwdImg from './assets/pwd-id.png'
-import arduinoImg from './assets/arduino.png'
+import pwdImg from './assets/PWD ID System.png'
+import arduinoImg from './assets/Fire & Smoke Detector.png'
 
 const supabaseUrl = 'https://lhshisjdrmyolwgzbqhk.supabase.co'
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxoc2hpc2pkcm15b2x3Z3picWhrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE4NDk5MTcsImV4cCI6MjA4NzQyNTkxN30._Ke65Ac72WBEH_CPriA0reFOGR_KB6dBXxJJkiE644Q'
@@ -176,7 +176,7 @@ const scrollToSection = (id) => {
         <a href="#contact" @click.prevent="scrollToSection('contact')" class="btn">RECRUIT ME</a>
       </div>
       <div class="img-container">
-        <img src="./assets/1742300971993.jpeg" alt="Dominik Carreon" class="profile-pic">
+        <img src="./assets/1742300971993.jpg" alt="Dominik Carreon" class="profile-pic">
       </div>
     </section>
 
